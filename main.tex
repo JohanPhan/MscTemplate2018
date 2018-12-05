@@ -1,0 +1,138 @@
+\input{page_setup.tex}
+\begin{document}
+%Title page (This is generate automatically from the commands above)
+\begin{titlepage}
+\noindent {\large \textbf{\thesisAuthor}}
+\vspace{2cm}\\
+\noindent {\Huge \thesisTitle}
+\vspace{2cm}\\
+\noindent \thesisType, \thesisDate 
+\vspace{1cm}
+\noindent \\ Supervisor: Massimiliano Ruocco \\
+\noindent Co-supervisor: Francesco Scibilia\\
+\vspace{1cm}
+\noindent \\Department of Cybernetics Engineering\\ Faculty of Information Technology, Mathematics and Electrical Engineering\\
+\vfill
+\begin{center}
+\includegraphics[width=3cm]{Image/NTNUlogo.pdf}
+\end{center}
+\end{titlepage}
+
+\thispagestyle{empty}
+
+\cleardoublepage
+
+\frontmatter
+
+\input{abstract_preface.tex}
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\mainmatter
+
+\chapter{Introduction}
+\label{cha:Introduction}
+Image classification using machine learning has recently enjoyed a great degree of success thanks to Deep learning and Convolutional Neural Network. One of the main factor that contributed to this success is the rise of big data where huge data-set can be use to train the learner. As for supervised learning tasks, Deep Convolutional Neural Network required thousands, if not tens, hundreds of thousands labeled data in order to deliver desired results. This intensive demands of labeled data is still remain one of the biggest challenge in Deep Learning today, especially in cases where we need expert to do the labelling work e.g MRI scans. Due to the fact that unlabeled data is normally much easier to obtain then labeled data, active learning has become one of the primary approach to reduce the labeling effort without scarifying the performance. The essence of active learning is, given a large unlabeled data pool, the active learner will select "the highest quality" instances to be labeled by an oracle. In this way, the active learner aims to achieve best performance in term of accuracy using as small labeled data set as possible, thereby reducing the labeling cost. 
+In this report, we will take a look at the current state of the art methods in active learning for deep convolutional neural network and compare their performance on different data sets . This report is means to provide the reader an overview of active learning using batch-mode approach and the experiment will be conduct on a VGG-16 model with pretrained weights on the popular ImageNet database.
+
+
+\section{Background and Motivation}\label{cit}
+
+\label{sec:BackgroundAndMotivation}
+Studies around active learning has started even before the rise of deep learning, in \citet{tong2001active}, experiments and discussion based on the performance of active learning on support vector machine(SVM) has been address and thoughtfully studied. However in the last decade, follow the success of deep learning and the abundance of unlabeled data thanks to the internet, the interest in active learning has become larger than ever. 
+-need more background ----
+
+Serial-mode active learning is a method that the active learner can only query a single instance at a time has been intensively studied in the last recent years and achieved a great degree of success \citet{activelearningbook}. However, such method is very impractical for real world application where the oracle labelling speed is normally much faster than the system query speed, since a modern deep learning model requires a signification amount of time to train. In order the utilize the power of active learning in real world application, batch-mode active learning has been proposed as a solution for this problem. In batch mode active learning, the learner will select a set of instances and perform query batch by batch. 
+++++ next next
+In \citet{activelearningbook}, the author has mentioned 
++++++
++++++
+Todo- motivation 
+
+
+\section{Goals and Research Questions}
+\label{sec:Goals and Research Questions}
+This project is meant to study the potential of using active learning in real world application where labeled data is very expensive to obtain. Therefore the first goal of this work is to provide the reader an overview of different recent state of the art approaches in batch-mode active learning for image classification problem and compare their performance on different setting and different data set. Additionally, we also want to address different problem with batch-mode active learning and study how incremental learning will affect the performance of active learning. In this report, we will to try to answer the following research questions:
+
+\begin{description}
+\item[Research question 1] {\it hmmm???   }
+\end{description}
+
+\begin{description}
+\item[Research question 2] {\it How different selection criteria will affect the performance of the classification model in term of accuracy per labeled instances? }
+\end{description}
+
+
+
+{\it Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat pulvinar hendrerit. Praesent sit amet elementum ipsum. Praesent id suscipit est. Maecenas gravida pretium magna non }
+
+\section{Research Method}
+\label{sec:researchMethod}
+In this Research, we will compare different mode of active learning with random selection of the data set.
+
+
+
+
+\section{Report Structure}
+\label{sec:reportStructure}
+The rest of the report is organized as follows. 
+Chapter 2 is an introduction to some of the basic concept in deep learning and active learning. The chapter will also address some of the related work in the active learning for image classification field. Chapter 3 outlines how different method of active learning is going to be implement in the experiments. In chapter 4, we will go though the experiments process and it result will be show for further discussion in chapter 5.
+
+\input{Background}
+\chapter{Model and PROPOSED APPROACH}
+\label{sec:architectureAndModel}
+\section{Classifier model}
+In this work, a pretrained VGG-16 model has been chosen as the base classifier. However, We only use pretrained weight on the convolution part of the pretrained model. The VGG-16 is chosen because it is fast to run and the out accuracy is also acceptable. 
+\section{Active learner model}
+\subsection{Least confident approach}
+\subsection{Least confident approach}
+\subsection{K-greedy approach}
+As a part of 
+\subsection{Cost-effective approach}
+
+
+
+Here you will present the architecture or model that you have chosen and that is (or will be) implemented in your work. Note that putting algorithms in your report is not desirable but in certain cases these might be placed in the appendix. Code further be avoided in the report itself but may be delivered in the fashion requested by the supervisor or, in the case of masters delivery, submitted as additional documents. 
+
+\chapter{Experiments and Results}
+\label{cha:ResearchAndResults}
+
+Result 1: random vs cost effective batch mode active learning, batch size of 200. 10000 epochs 
+Result 2: Comparison of active learning 
+
+Current plan
+Random Sampling
+Least Confidence [1]
+Margin Sampling [1]
+Entropy Sampling [1]
+Uncertainty Sampling with Dropout Estimation [2]
+Bayesian Active Learning Disagreement [2]
+K-Means Sampling [3]
+K-Centers Greedy [3]
+Core-Set [3]
+Adversarial - Basic Iterative Method
+Adversarial - DeepFool [4]
+\input{Experimetplan.tex}
+
+
+
+\chapter{Evaluation and Conclusion}
+\label{cha:evaluationAndConclusion}
+
+
+
+\input{Discussion.tex}
+\backmatter
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{Contens/bibtex/bibliography}
+
+\chapter{Appendices}
+\label{cha:appendices}
+
+
+\end{document}

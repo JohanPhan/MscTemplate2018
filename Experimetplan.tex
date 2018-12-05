@@ -1,0 +1,24 @@
+\section{Experimental Plan}
+\label{sec:experimentalPlan}
+In the experiments, we want to study how batch incremental method of active learning works on the cifar-10 data-set and the data-set. For the classification model, we choose to use the VGG-net because it simplicity, short training time and powerful performance. The experiment will by conducts using Pytorch which is one of the most popular deep learning platform. 
+The plan is first to compare the performance of different uncertainty base method. Then try the same thing with distance base method and BALD.
+
+
+
+\section{Experimental Setup}
+
+\label{sec:experimentalSetup}
+For the first experiment, the active learner will query 100 instances for every 10 epoch of training. The training process will happens incrementally, where the size of the training set will gradually increase. Nearly all of the weight in the VGG-net will be initialized by using pre-trained weight, expect for the last three forward fully connected layer. The pre-trained weight is loaded from a pre-trained VGG model of ImageNet data-set which consist of 150,000 photographs and  1000 classes.
+
+
+
+
+Optimizer Adam:
+learning rate 0.0001, 
+betas=(0.9, 0.999),
+eps=1e-08, 
+
+Graph1
+Graph2
+Graph3 making
+\input{Result.tex}
